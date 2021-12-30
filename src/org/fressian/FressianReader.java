@@ -699,12 +699,8 @@ public class FressianReader implements Reader, Closeable {
         return readInt32();
     }
 
-    private int internalReadInt32() throws IOException {
-        return intCast(internalReadInt());
-    }
-
     private int readInt32() throws IOException {
-        return intCast(readInt());
+        return intCast(internalReadInt());
     }
 
     private StringBuffer internalReadString(int length) throws IOException {
