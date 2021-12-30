@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.fressian</groupId>
   <artifactId>fressian</artifactId>
-  <version>0.6.7-SNAPSHOT</version>
+  <version>0.6.7-favila01</version>
   <name>fressian</name>
   <packaging>jar</packaging>
   <description>Fressian is an extensible binary data notation.</description>
