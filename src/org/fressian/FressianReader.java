@@ -733,7 +733,7 @@ public class FressianReader implements Reader, Closeable {
                 case Codes.STRING_PACKED_LENGTH_START + 5:
                 case Codes.STRING_PACKED_LENGTH_START + 6:
                 case Codes.STRING_PACKED_LENGTH_START + 7:
-                    internalReadStringBuffer(buf, code - Codes.STRING_PACKED_LENGTH_START).toString();
+                    internalReadStringBuffer(buf, code - Codes.STRING_PACKED_LENGTH_START);
                     done = true;
                     break;
 
