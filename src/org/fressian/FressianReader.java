@@ -832,11 +832,7 @@ public class FressianReader implements Reader, Closeable {
         ArrayList objects = new ArrayList();
         int code;
         while (true) {
-            try {
-                code = readNextCode();
-            } catch (EOFException e) {
-                code = Codes.END_COLLECTION;
-            }
+            code = readNextCodeOrEnd();
             if (code == Codes.END_COLLECTION) {
                 return objects.toArray();
             }
@@ -926,6 +922,11 @@ public class FressianReader implements Reader, Closeable {
     private int readNextCode() throws IOException {
         return is.readRawByte();
     }
+
+    private int readNextCodeOrEnd() throws IOException {
+        return is.readRawByteWithEOFSentinel(Codes.END_COLLECTION);
+    }
+
 
     private Object readAndCacheObject(ArrayList cache) throws IOException {
         int index = cache.size();

@@ -43,6 +43,15 @@ public class RawInput implements Closeable {
         return result;
     }
 
+    public int readRawByteWithEOFSentinel(int eof) throws IOException {
+        int result = is.read();
+        if (result < 0) {
+            return eof;
+        }
+        bytesRead++;
+        return result;
+    }
+
     public long readRawInt8() throws IOException {
         return readRawByte();
     }
